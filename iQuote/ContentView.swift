@@ -16,29 +16,30 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             Image("background").ignoresSafeArea()
+
             VStack{
                 Text("Welcome to iQuote! Click the button below to view a random quote.")
                     .multilineTextAlignment(.center)
                     .frame(width: 350, height: 200)
                 
                 Text("'" + quotes[randNumber] + "'")
-                    .padding(.bottom, 150.0)
+                    .multilineTextAlignment(.center)
                     .font(.system(size: 20))
-                    .frame(width: 300, height: 300)
+                    .padding(.bottom, 100.0)
+                    .frame(width: 300.0, height: 300)
                 
-                HStack{
-                    Button(action: {
-                        getRandomNumber()
-                    }, label: {
-                        Text("Random Quote...").font(.system(size: 25))
-                            .font(.callout)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.gray)
-                            .multilineTextAlignment(.center)
-                            .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
-                            .border(.black)
-                    })
-                }
+
+                Button(action: {
+                    getRandomNumber()
+                }, label: {
+                    Text("Random Quote...").font(.system(size: 25))
+                        .font(.callout)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.gray)
+                        .multilineTextAlignment(.center)
+                        .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
+                        .border(.black)
+                })
             }
             
         }
